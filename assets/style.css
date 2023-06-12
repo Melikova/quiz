@@ -15,8 +15,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 40px 60px;
-    height: 50px;
+    height: 10vh;
+    margin: 0 20px;
 }
 
 #top .score{
@@ -62,7 +62,7 @@ body{
 
 #bottom{
     width: 100vw;
-    height: 100px;
+    height: 10vh;
     background: #F4F3F6;
     position: absolute;
     bottom: 0;
@@ -73,7 +73,7 @@ body{
 
 #bottom button{
     width: 240px;
-    height: 60px;
+    padding: 10px;
     background: #747475;
     color: #EDE8E2;
     opacity: 0.5;
@@ -84,6 +84,12 @@ body{
     border: none;
     text-transform: uppercase;
     font-family: 'General Sans';
+}
+
+#bottom button.selected{
+    background: #45C486 !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
 }
 
 #bottom #progress_bar{
@@ -112,34 +118,36 @@ body{
 #main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    height: 80vh;
+    padding: 4vh 0;
+    overflow:auto;
 }
 
 #main #question{
-    width: 690px;
+    min-width: 690px;
     color: #191D63;
     font-family: 'General Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 1.2em;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 5vh;
 }
 
-#main #answers div{
-    height: 81px;
-    width: 510px;
+#main #answers>div{
+    height: 80px;
+    width: 610px;
     background: #F4F3F6;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 8px;
     display: flex;
     padding: 16px 24px;
+    align-items: center;
 }
 
-#main #answers div:hover{
+#main #answers>div:hover{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     cursor: pointer;
 }
@@ -148,13 +156,13 @@ body{
     background: #45C486 !important;
 }
 
-#main #answers .selected span{
+#main #answers .selected .answer{
     color: #F4F3F6 !important;
 }
 
-#main #answers div .index{
-    width: 49px;
-    height: 49px;
+#main #answers>div .index{
+    min-width: 49px;
+    min-height: 49px;
     border-radius: 50%;
     background: #EDE8E3;
     display: flex;
@@ -173,10 +181,17 @@ body{
     color: #45C486 !important;
 }
 
-#main #answers div span{
+#main #answers>div .answer{
     font-family: 'General Sans';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     color: #060710;
 }
+
+.restart{
+    background: #45C486 !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+}
+
